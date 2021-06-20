@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/galleryFragment">
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.daanidev.galleryview.ui.galleryview.GalleryFragment"
+        android:label="GalleryFragment" >
+        <action
+            android:id="@+id/action_galleryFragment_to_imageDetailedFragment"
+            app:destination="@id/imageDetailedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageDetailedFragment"
+        android:name="com.daanidev.galleryview.ui.detail.ImageDetailedFragment"
+        android:label="ImageDetailedFragment" >
+        <argument
+            android:name="img"
+            app:argType="string" />
+    </fragment>
+</navigation>

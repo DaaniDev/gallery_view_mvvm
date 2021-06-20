@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/iv_wallpaper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name" />
+
+        <com.fangxu.allangleexpandablebutton.AllAngleExpandableButton
+            android:id="@+id/btn_expandable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:aebAnimDurationMillis="175"
+            app:aebButtonElevation="4dp"
+            app:aebButtonGapDp="45dp"
+            app:aebEndAngleDegree="150"
+            app:aebStartAngleDegree="30"
+            app:aebIsSelectionMode="false"
+            app:aebMainButtonRotateAnimDurationMillis="300"
+            app:aebMainButtonRotateDegree="0"
+            app:aebMainButtonSizeDp="45dp"
+            app:aebRippleEffect="true"
+            app:aebSubButtonSizeDp="45dp"
+            app:aebBlurBackground="true"
+            app:aebBlurRadius="10"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

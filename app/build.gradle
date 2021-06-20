@@ -1,0 +1,100 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.daanidev.galleryview"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        renderscriptTargetApi 21
+        renderscriptSupportModeEnabled true
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin_version}"
+    implementation "androidx.core:core-ktx:${versions.core_ktx}"
+    implementation "androidx.appcompat:appcompat:${versions.material}"
+    implementation "com.google.android.material:material:${versions.material}"
+    implementation "androidx.constraintlayout:constraintlayout:${versions.constraint_layout}"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:${versions.swipe_layout}"
+
+    // lifecycle
+    implementation "android.arch.lifecycle:extensions:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycle_version}"
+    // size libs
+    implementation "com.intuit.ssp:ssp-android:${versions.size}"
+    implementation "com.intuit.sdp:sdp-android:${versions.size}"
+
+    //coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
+
+    //ktx
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+
+    //koin
+    implementation "org.koin:koin-android:${versions.koin}"
+    implementation "org.koin:koin-androidx-viewmodel:${versions.koin}"
+
+    //retrofit
+    implementation "com.google.code.gson:gson:${versions.gson}"
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${versions.loggingInterceptor}"
+
+    //lottie
+    implementation "com.airbnb.android:lottie:${versions.lottie}"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+    kapt "com.github.bumptech.glide:compiler:${versions.glide}"
+
+    //like button
+    implementation "com.github.jd-alexander:LikeButton:${versions.like_button}"
+
+    // recyclerview adapter animator
+    implementation "jp.wasabeef:recyclerview-animators:${versions.recyclerview_anim}"
+
+    // expendable button
+    implementation "com.github.uin3566:AllAngleExpandableButton:${versions.expendable_button}"
+
+    //multidex
+    implementation 'com.android.support:multidex:1.0.3'
+
+
+    //testing
+    testImplementation "junit:junit:${versions.junit_test}"
+    androidTestImplementation "androidx.test.ext:junit:${versions.junit}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso_core}"
+}
