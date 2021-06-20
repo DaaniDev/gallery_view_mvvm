@@ -13,12 +13,6 @@ class GalleryViewModel(val repository: GalleryRepository) : ViewModel() {
 
 
 
-    var dataLoadedCheck=true
-   /* val getImageList = flow {
-
-        emit(repository.getImagesList(pageNo))
-    }
-*/
     fun getImages(pageNo:Int) = repository.getImagesList(pageNo)
 
 }
